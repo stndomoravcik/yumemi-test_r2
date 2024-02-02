@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SearchView: View {
     
+    @StateObject private var viewModel = SearchViewModel()
     @State private var searchText = ""
     
     var body: some View {
