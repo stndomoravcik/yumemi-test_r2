@@ -10,11 +10,19 @@ import Foundation
 
 final class SearchViewModel: ObservableObject {
     
+    private let apiManager = APIManager()
+    
+    @Published var repos: [Repo] = []
+    
     func makeRepos(_ searchText: String) {
-        // TODO: API呼び出し
+        apiManager.searchGitRepositories(with: searchText) { [weak self] items in
+            DispatchQueue.main.async {
+                self?.repos = items
+            }
+        }
     }
     
     func cancelSearch() {
-        // TODO: 検索中断
+        apiManager.cancelSearch()
     }
 }
