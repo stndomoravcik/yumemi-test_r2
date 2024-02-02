@@ -10,7 +10,25 @@ import SwiftUI
 
 struct SearchView: View {
     
+    @State private var searchText = ""
+    
     var body: some View {
-        Text("test")
+        NavigationView {
+            VStack {
+                TextField("", text: $searchText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .autocorrectionDisabled()
+                    .padding()
+                    .onChange(of: searchText) { _ in
+                        // TODO: 中断処理
+                    }
+                    .onSubmit {
+                        // TODO: 検索処理
+                    }
+                List {
+                    // TODO: 一覧実装
+                }
+            }
+        }
     }
 }
