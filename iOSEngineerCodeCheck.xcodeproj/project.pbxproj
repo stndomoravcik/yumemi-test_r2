@@ -10,6 +10,7 @@
 		9CBB91B92B6D44BE00CED472 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB91B82B6D44BE00CED472 /* SearchView.swift */; };
 		9CBB91BB2B6D45FE00CED472 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB91BA2B6D45FE00CED472 /* SearchViewModel.swift */; };
 		9CBB91BD2B6D46F100CED472 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB91BC2B6D46F100CED472 /* Repo.swift */; };
+		9CBB91BF2B6D473B00CED472 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB91BE2B6D473B00CED472 /* APIManager.swift */; };
 		BF0A658D244F2A3B00280FA6 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* ViewController2.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -42,6 +43,7 @@
 		9CBB91B82B6D44BE00CED472 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		9CBB91BA2B6D45FE00CED472 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		9CBB91BC2B6D46F100CED472 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		9CBB91BE2B6D473B00CED472 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
 				BFD945EC244DC5EB0012785A /* Info.plist */,
 				9CBB91BC2B6D46F100CED472 /* Repo.swift */,
+				9CBB91BE2B6D473B00CED472 /* APIManager.swift */,
 			);
 			path = iOSEngineerCodeCheck;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CBB91BF2B6D473B00CED472 /* APIManager.swift in Sources */,
 				9CBB91BD2B6D46F100CED472 /* Repo.swift in Sources */,
 				9CBB91BB2B6D45FE00CED472 /* SearchViewModel.swift in Sources */,
 				9CBB91B92B6D44BE00CED472 /* SearchView.swift in Sources */,
