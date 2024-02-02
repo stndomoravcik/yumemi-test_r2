@@ -24,10 +24,12 @@ struct SearchView: View {
                         // TODO: 中断処理
                     }
                     .onSubmit {
-                        // TODO: 検索処理
+                        viewModel.makeRepos(searchText)
                     }
                 List {
-                    // TODO: 一覧実装
+                    ForEach(viewModel.repos, id: \.self) { item in
+                        Text(item.fullName)
+                    }
                 }
             }
         }
