@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9CBB91C52B6E5DFE00CED472 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB91C42B6E5DFE00CED472 /* Repo.swift */; };
 		9CBB91C72B6E7EB800CED472 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB91C62B6E7EB800CED472 /* APIManager.swift */; };
+		9CBB91C92B6E953700CED472 /* ViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB91C82B6E953700CED472 /* ViewControllerModel.swift */; };
 		BF0A658D244F2A3B00280FA6 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* ViewController2.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		9CBB91C42B6E5DFE00CED472 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		9CBB91C62B6E7EB800CED472 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		9CBB91C82B6E953700CED472 /* ViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModel.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				BFD945E2244DC5E80012785A /* ViewController.swift */,
 				BF0A658C244F2A3B00280FA6 /* ViewController2.swift */,
 				9CBB91C42B6E5DFE00CED472 /* Repo.swift */,
+				9CBB91C82B6E953700CED472 /* ViewControllerModel.swift */,
 				9CBB91C62B6E7EB800CED472 /* APIManager.swift */,
 				BFD945E4244DC5E80012785A /* Main.storyboard */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
@@ -271,6 +274,7 @@
 				9CBB91C72B6E7EB800CED472 /* APIManager.swift in Sources */,
 				BFD945E3244DC5E80012785A /* ViewController.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* ViewController2.swift in Sources */,
+				9CBB91C92B6E953700CED472 /* ViewControllerModel.swift in Sources */,
 				9CBB91C52B6E5DFE00CED472 /* Repo.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,

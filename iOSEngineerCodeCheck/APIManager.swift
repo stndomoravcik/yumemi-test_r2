@@ -11,7 +11,7 @@ import Foundation
 class APIManager {
     private var searchTask: URLSessionTask?
     
-    func searchGitRepositories(with query: String, completion: @escaping ([Repo]) -> Void) {
+    func searchGitRepositories(query: String, completion: @escaping ([Repo]) -> Void) {
         guard let searchURL = URL(string: "https://api.github.com/search/repositories?q=\(query)") else {
             return
         }
