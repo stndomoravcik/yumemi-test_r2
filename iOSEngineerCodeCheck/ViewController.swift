@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    @IBOutlet weak var SchBr: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
     private var apiManager = APIManager()
     
     var repo: [Repo] = []
@@ -18,8 +18,8 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SchBr.placeholder = "GitHubのリポジトリを検索できるよー"
-        SchBr.delegate = self
+        searchBar.placeholder = "GitHubのリポジトリを検索できるよー"
+        searchBar.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
