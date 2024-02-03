@@ -13,9 +13,9 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var SchBr: UISearchBar!
     
     var repo: [[String: Any]]=[]
+    var repoIndex: Int?
     
     var task: URLSessionTask?
-    var idx: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +58,9 @@ class ViewController: UITableViewController, UISearchBarDelegate {
         
         if segue.identifier == "Detail"{
             let dtl = segue.destination as! ViewController2
-            dtl.vc1 = self
+            if let repoIndex = repoIndex {
+                dtl.repository = repo[repoIndex]
+            }
         }
         
     }
@@ -80,7 +82,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 画面遷移時に呼ばれる
-        idx = indexPath.row
+        repoIndex = indexPath.row
         performSegue(withIdentifier: "Detail", sender: self)
         
     }
