@@ -31,6 +31,7 @@ class ViewController2: UIViewController {
     }
     
     func updateScreenData() {
+        
         guard let repo = repository else {
             return
         }
@@ -47,6 +48,7 @@ class ViewController2: UIViewController {
     }
     
     func getImage(_ avatarURL: String){
+        
         apiManager.getRepositoryImageData(avatarURL) { imageData in
             guard let imageData = imageData else {
                 return
