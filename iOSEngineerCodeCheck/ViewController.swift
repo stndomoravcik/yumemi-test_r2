@@ -18,8 +18,7 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        SchBr.text = "GitHubのリポジトリを検索できるよー"
+        SchBr.placeholder = "GitHubのリポジトリを検索できるよー"
         SchBr.delegate = self
     }
     
@@ -60,8 +59,6 @@ class ViewController: UITableViewController {
 extension ViewController: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        // ↓こうすれば初期のテキストを消せる
-        searchBar.text = ""
         return true
     }
     
