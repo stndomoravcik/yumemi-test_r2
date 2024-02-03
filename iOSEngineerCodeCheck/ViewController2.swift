@@ -21,7 +21,7 @@ class ViewController2: UIViewController {
     @IBOutlet weak var FrksLbl: UILabel!
     @IBOutlet weak var IsssLbl: UILabel!
     
-    var repository: [String : Any]?
+    var repository: Repo?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,20 +29,18 @@ class ViewController2: UIViewController {
     }
     
     func updateScreenData() {
-        guard let repo = repository, !repo.isEmpty else {
+        guard let repo = repository else {
             return
         }
-        LangLbl.text = "Written in \(repo["language"] as? String ?? "")"
-        StrsLbl.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
-        WchsLbl.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
-        FrksLbl.text = "\(repo["forks_count"] as? Int ?? 0) forks"
-        IsssLbl.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
-        TtlLbl.text = repo["full_name"] as? String
+        LangLbl.text = "Written in \(repo.language)"
+        StrsLbl.text = "\(repo.stargazersCount) stars"
+        WchsLbl.text = "\(repo.wachersCount) watchers"
+        FrksLbl.text = "\(repo.forksCount) forks"
+        IsssLbl.text = "\(repo.openIssuesCount) open issues"
+        TtlLbl.text = repo.fullName
         
-        if let owner = repo["owner"] as? [String : Any] {
-            if let imgURL = owner["avatar_url"] as? String {
-                getImage(imgURL)
-            }
+        if let imgURL = repo.avatarUrl {
+            getImage(imgURL)
         }
     }
     
