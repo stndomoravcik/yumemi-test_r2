@@ -11,11 +11,10 @@ import UIKit
 class ViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var SchBr: UISearchBar!
+    private var apiManager = APIManager()
     
     var repo: [Repo] = []
     var repoIndex: Int?
-    
-    var task: URLSessionTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,46 +30,19 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        task?.cancel()
+        apiManager.cancelSearch()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text, !searchText.isEmpty else {
             return
         }
-        guard let url = URL(string: "https://api.github.com/search/repositories?q=\(searchText)") else {
-            return
-        }
-        task = URLSession.shared.dataTask(with: url) { (data, res, err) in
-            if let error = err {
-                print("Error: \(error)")
-                return
-            }
-            guard let data = data else {
-                print("Error: No data")
-                return
-            }
-            do {
-                guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
-                    print("Error: Wrong JSON format")
-                    return
-                }
-                if let items = json["items"] as? [[String: Any]] {
-                    let repos = items.map { item in
-                        Repo(item)
-                    }
-                    self.repo = repos
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                } else {
-                    print("Error: No items found")
-                }
-            } catch {
-                print("Error: Serialization failure")
+        apiManager.searchGitRepositories(with: searchText) { [weak self] repos in
+            self?.repo = repos
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
             }
         }
-        task?.resume()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
