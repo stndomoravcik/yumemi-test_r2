@@ -51,6 +51,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
                 }
             }
         }
+        task?.resume()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
