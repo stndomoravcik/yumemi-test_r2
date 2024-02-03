@@ -13,7 +13,7 @@ class ViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     private var apiManager = APIManager()
     
-    var repo: [Repo] = []
+    var repositories: [Repo] = []
     var repoIndex: Int?
     
     override func viewDidLoad() {
@@ -26,20 +26,20 @@ class ViewController: UITableViewController {
         
         if segue.identifier == "Detail"{
             if let dtl = segue.destination as? ViewController2, let repoIndex = repoIndex {
-                dtl.repository = repo[repoIndex]
+                dtl.repository = repositories[repoIndex]
             }
         }
         
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repo.count
+        return repositories.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
-        let rp = repo[indexPath.row]
+        let rp = repositories[indexPath.row]
         cell.textLabel?.text = rp.fullName
         cell.detailTextLabel?.text = rp.language
         cell.tag = indexPath.row
@@ -71,7 +71,7 @@ extension ViewController: UISearchBarDelegate {
             return
         }
         apiManager.searchGitRepositories(with: searchText) { [weak self] repos in
-            self?.repo = repos
+            self?.repositories = repos
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
