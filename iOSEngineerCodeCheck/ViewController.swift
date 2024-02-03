@@ -11,8 +11,8 @@ import UIKit
 class ViewController: UITableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
-    private var apiManager = APIManager()
     
+    private var apiManager = APIManager()
     private var repositories: [Repo] = []
     private var repoIndex: Int?
     
@@ -29,7 +29,6 @@ class ViewController: UITableViewController {
                 dtl.setupRepository(repositories[repoIndex])
             }
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,12 +47,10 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 画面遷移時に呼ばれる
+        
         repoIndex = indexPath.row
         performSegue(withIdentifier: "Detail", sender: self)
-        
     }
-    
 }
 
 extension ViewController: UISearchBarDelegate {
