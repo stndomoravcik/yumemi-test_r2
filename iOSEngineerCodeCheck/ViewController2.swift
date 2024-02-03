@@ -10,16 +10,16 @@ import UIKit
 
 class ViewController2: UIViewController {
     
-    @IBOutlet weak var ImgView: UIImageView!
+    @IBOutlet weak var repositoryImage: UIImageView!
     
-    @IBOutlet weak var TtlLbl: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var LangLbl: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
     
-    @IBOutlet weak var StrsLbl: UILabel!
-    @IBOutlet weak var WchsLbl: UILabel!
-    @IBOutlet weak var FrksLbl: UILabel!
-    @IBOutlet weak var IsssLbl: UILabel!
+    @IBOutlet weak var stargazersLabel: UILabel!
+    @IBOutlet weak var watchersLabel: UILabel!
+    @IBOutlet weak var forksCountLabel: UILabel!
+    @IBOutlet weak var issuesCountLabel: UILabel!
     
     var repository: Repo?
     private var apiManager = APIManager()
@@ -33,12 +33,12 @@ class ViewController2: UIViewController {
         guard let repo = repository else {
             return
         }
-        LangLbl.text = "Written in \(repo.language)"
-        StrsLbl.text = "\(repo.stargazersCount) stars"
-        WchsLbl.text = "\(repo.wachersCount) watchers"
-        FrksLbl.text = "\(repo.forksCount) forks"
-        IsssLbl.text = "\(repo.openIssuesCount) open issues"
-        TtlLbl.text = repo.fullName
+        languageLabel.text = "Written in \(repo.language)"
+        stargazersLabel.text = "\(repo.stargazersCount) stars"
+        watchersLabel.text = "\(repo.wachersCount) watchers"
+        forksCountLabel.text = "\(repo.forksCount) forks"
+        issuesCountLabel.text = "\(repo.openIssuesCount) open issues"
+        titleLabel.text = repo.fullName
         
         if let imgURL = repo.avatarUrl {
             getImage(imgURL)
@@ -52,7 +52,7 @@ class ViewController2: UIViewController {
             }
             if let image = UIImage(data: imageData) {
                 DispatchQueue.main.async {
-                    self.ImgView.image = image
+                    self.repositoryImage.image = image
                 }
             }
         }
