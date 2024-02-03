@@ -12,7 +12,7 @@ class ViewController: UITableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
-    private var apiManager = APIManager()
+    private var viewModel = ViewControllerModel()
     private var repositories: [Repo] = []
     private var repoIndex: Int?
     
@@ -61,14 +61,14 @@ extension ViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        apiManager.cancelSearch()
+        viewModel.cancelFetchRepositories()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text, !searchText.isEmpty else {
             return
         }
-        apiManager.searchGitRepositories(with: searchText) { [weak self] repos in
+        viewModel.fetchGitRepository(with: searchText) { [weak self] repos in
             self?.repositories = repos
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
