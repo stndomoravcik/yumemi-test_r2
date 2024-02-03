@@ -18,8 +18,9 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchBar.placeholder = "GitHubのリポジトリを検索できるよー"
         searchBar.delegate = self
+        searchBar.placeholder = "リポジトリ名を入力してください"
+        self.navigationItem.title = "GITリポジトリ検索"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
