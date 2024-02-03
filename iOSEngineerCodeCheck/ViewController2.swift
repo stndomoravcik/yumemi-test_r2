@@ -19,7 +19,7 @@ class ViewController2: UIViewController {
     @IBOutlet weak var issuesCountLabel: UILabel!
     
     private var repository: Repo?
-    private var apiManager = APIManager()
+    private var viewModel = ViewController2Model()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ class ViewController2: UIViewController {
     
     func getImage(_ avatarURL: String){
         
-        apiManager.getRepositoryImageData(avatarURL) { imageData in
+        viewModel.fetchRepositoryImage(with: avatarURL) { imageData in
             guard let imageData = imageData else {
                 return
             }
