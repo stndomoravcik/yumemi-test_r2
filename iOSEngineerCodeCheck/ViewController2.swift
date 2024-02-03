@@ -22,6 +22,7 @@ class ViewController2: UIViewController {
     @IBOutlet weak var IsssLbl: UILabel!
     
     var repository: Repo?
+    private var apiManager = APIManager()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,16 +46,16 @@ class ViewController2: UIViewController {
     }
     
     func getImage(_ avatarURL: String){
-        guard let url = URL(string: avatarURL) else {
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { (data, res, err) in
-            let img = UIImage(data: data!)!
-            DispatchQueue.main.async {
-                self.ImgView.image = img
+        apiManager.getRepositoryImageData(avatarURL) { imageData in
+            guard let imageData = imageData else {
+                return
             }
-        }.resume()
+            if let image = UIImage(data: imageData) {
+                DispatchQueue.main.async {
+                    self.ImgView.image = image
+                }
+            }
+        }
     }
     
 }
