@@ -13,8 +13,8 @@ class ViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     private var apiManager = APIManager()
     
-    var repositories: [Repo] = []
-    var repoIndex: Int?
+    private var repositories: [Repo] = []
+    private var repoIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
