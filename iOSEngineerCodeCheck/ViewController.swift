@@ -42,13 +42,29 @@ class ViewController: UITableViewController, UISearchBarDelegate {
             return
         }
         task = URLSession.shared.dataTask(with: url) { (data, res, err) in
-            if let obj = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
-                if let items = obj["items"] as? [[String: Any]] {
-                self.repo = items
+            if let error = err {
+                print("Error: \(error)")
+                return
+            }
+            guard let data = data else {
+                print("Error: No data")
+                return
+            }
+            do {
+                guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+                    print("Error: Wrong JSON format")
+                    return
+                }
+                if let items = json["items"] as? [[String: Any]] {
+                    self.repo = items
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
+                } else {
+                    print("Error: No items found")
                 }
+            } catch {
+                print("Error: Serialization failure")
             }
         }
         task?.resume()
