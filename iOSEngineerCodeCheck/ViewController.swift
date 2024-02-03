@@ -12,7 +12,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var SchBr: UISearchBar!
     
-    var repo: [[String: Any]]=[]
+    var repo: [Repo] = []
     var repoIndex: Int?
     
     var task: URLSessionTask?
@@ -56,7 +56,10 @@ class ViewController: UITableViewController, UISearchBarDelegate {
                     return
                 }
                 if let items = json["items"] as? [[String: Any]] {
-                    self.repo = items
+                    let repos = items.map { item in
+                        Repo(item)
+                    }
+                    self.repo = repos
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
@@ -88,8 +91,8 @@ class ViewController: UITableViewController, UISearchBarDelegate {
         
         let cell = UITableViewCell()
         let rp = repo[indexPath.row]
-        cell.textLabel?.text = rp["full_name"] as? String ?? ""
-        cell.detailTextLabel?.text = rp["language"] as? String ?? ""
+        cell.textLabel?.text = rp.fullName
+        cell.detailTextLabel?.text = rp.language
         cell.tag = indexPath.row
         return cell
         
