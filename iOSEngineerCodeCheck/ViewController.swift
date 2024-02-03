@@ -26,7 +26,7 @@ class ViewController: UITableViewController {
         
         if segue.identifier == "Detail"{
             if let dtl = segue.destination as? ViewController2, let repoIndex = repoIndex {
-                dtl.repository = repositories[repoIndex]
+                dtl.setupRepository(repositories[repoIndex])
             }
         }
         

@@ -11,22 +11,23 @@ import UIKit
 class ViewController2: UIViewController {
     
     @IBOutlet weak var repositoryImage: UIImageView!
-    
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var languageLabel: UILabel!
-    
     @IBOutlet weak var stargazersLabel: UILabel!
     @IBOutlet weak var watchersLabel: UILabel!
     @IBOutlet weak var forksCountLabel: UILabel!
     @IBOutlet weak var issuesCountLabel: UILabel!
     
-    var repository: Repo?
+    private var repository: Repo?
     private var apiManager = APIManager()
         
     override func viewDidLoad() {
         super.viewDidLoad()
         updateScreenData()
+    }
+    
+    func setupRepository(_ repo: Repo) {
+        repository = repo
     }
     
     func updateScreenData() {
