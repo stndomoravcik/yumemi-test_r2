@@ -31,6 +31,7 @@ struct SearchView: View {
                         NavigationLink(item.fullName, destination: DetailView(viewModel: .init(repo: item)))
                     }
                 }
+                .listStyle(.plain)
             }
             .navigationTitle("GITリポジトリ検索")
             .navigationBarTitleDisplayMode(.inline)
