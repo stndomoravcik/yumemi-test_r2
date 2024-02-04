@@ -16,7 +16,7 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("", text: $searchText)
+                TextField("リポジトリ名を入力してください", text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocorrectionDisabled()
                     .padding()
@@ -32,6 +32,8 @@ struct SearchView: View {
                     }
                 }
             }
+            .navigationTitle("GITリポジトリ検索")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
