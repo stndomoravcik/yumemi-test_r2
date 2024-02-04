@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RepositoryListViewController.swift
 //  iOSEngineerCodeCheck
 //
 //  Created by 史 翔新 on 2020/04/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class RepositoryListViewController: UITableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -26,7 +26,7 @@ class ViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "Detail"{
-            if let dtl = segue.destination as? ViewController2, let repoIndex = repoIndex {
+            if let dtl = segue.destination as? RepositoryDetailViewController, let repoIndex = repoIndex {
                 dtl.setupRepository(repositories[repoIndex])
             }
         }
@@ -54,7 +54,7 @@ class ViewController: UITableViewController {
     }
 }
 
-extension ViewController: UISearchBarDelegate {
+extension RepositoryListViewController: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         return true
