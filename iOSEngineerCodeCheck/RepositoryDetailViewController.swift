@@ -19,7 +19,7 @@ class RepositoryDetailViewController: UIViewController {
     @IBOutlet weak var issuesCountLabel: UILabel!
     
     private var repository: Repo?
-    private var viewModel = ViewController2Model()
+    private var viewModel = RepositoryDetailViewModel()
         
     override func viewDidLoad() {
         super.viewDidLoad()
