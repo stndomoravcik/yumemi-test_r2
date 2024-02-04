@@ -32,7 +32,7 @@ final class DetailViewModel: ObservableObject {
                     image: uiImage,
                     language: self?.repo.language ?? "",
                     stargazers: String(self?.repo.stargazersCount ?? 0),
-                    watchers: String(self?.repo.wachersCount ?? 0),
+                    watchers: String(self?.repo.watchersCount ?? 0),
                     forks: String(self?.repo.forksCount ?? 0),
                     issues: String(self?.repo.openIssuesCount ?? 0)
                 )
