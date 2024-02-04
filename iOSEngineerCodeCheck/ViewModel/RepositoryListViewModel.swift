@@ -10,7 +10,7 @@ import Foundation
 
 class RepositoryListViewModel {
     
-    private var apiManager = APIManager()
+    private var apiManager = APIManager.shared
     
     func fetchGitRepository(with query: String, completion: @escaping ([Repo]) -> Void) {
         apiManager.searchGitRepositories(query: query, completion: completion)
