@@ -9,24 +9,37 @@
 import Foundation
 
 class APIManager {
-    private var searchTask: URLSessionTask?
+    private var downloadTask: URLSessionTask?
+    
+    private func downloadData(_ url: URL, completion: @escaping (Data?) -> Void) {
+        
+        downloadTask = URLSession.shared.dataTask(with: url) { (data, res, err) in
+            if let error = err {
+                print("Error: data download failed")
+                completion(nil)
+                return
+            }
+            completion(data)
+        }
+        downloadTask?.resume()
+    }
+    
+    func cancelSearch() {
+        downloadTask?.cancel()
+    }
     
     func searchGitRepositories(query: String, completion: @escaping ([Repo]) -> Void) {
         guard let searchURL = URL(string: "https://api.github.com/search/repositories?q=\(query)") else {
             return
         }
-        searchTask = URLSession.shared.dataTask(with: searchURL) { (data, res, err) in
-            if let error = err {
-                print("Error: \(error)")
-                return
-            }
+        downloadData(searchURL) { data in
             guard let data = data else {
-                print("Error: No data")
+                completion([])
                 return
             }
             do {
-                guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
-                    print("Error: Wrong JSON format")
+                guard let json = try JSONSerialization.jsonObject(with: data) as? [String : Any] else {
+                    completion([])
                     return
                 }
                 if let items = json["items"] as? [[String: Any]] {
@@ -35,28 +48,16 @@ class APIManager {
                     }
                     completion(repos)
                 } else {
-                    print("Error: No items found")
+                    completion([])
                 }
             } catch {
-                print("Error: Serialization failure")
+                completion([])
             }
         }
-        searchTask?.resume()
     }
     
     func getRepositoryImageData(_ imageURL: String, completion: @escaping (Data?) -> Void){
         guard let url = URL(string: imageURL) else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, res, err) in
-            guard let data = data else {
-                completion(nil)
-                return
-            }
-            completion(data)
-        }.resume()
-    }
-    
-    func cancelSearch() {
-        searchTask?.cancel()
+        downloadData(url, completion: completion)
     }
 }
