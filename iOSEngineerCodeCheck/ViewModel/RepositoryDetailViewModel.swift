@@ -10,7 +10,7 @@ import Foundation
 
 class RepositoryDetailViewModel {
     
-    private var apiManager = APIManager()
+    private var apiManager = APIManager.shared
     
     func fetchRepositoryImage(with urlString: String, completion: @escaping (Data?) -> Void) {
         apiManager.getRepositoryImageData(urlString, completion: completion)

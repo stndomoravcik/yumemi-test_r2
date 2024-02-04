@@ -9,6 +9,9 @@
 import Foundation
 
 class APIManager {
+    
+    static let shared = APIManager()
+    
     private var downloadTask: URLSessionTask?
     
     private func downloadData(_ url: URL, completion: @escaping (Data?) -> Void) {
