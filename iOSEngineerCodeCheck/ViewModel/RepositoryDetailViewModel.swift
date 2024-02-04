@@ -12,7 +12,7 @@ class RepositoryDetailViewModel {
     
     private var apiManager = APIManager.shared
     
-    func fetchRepositoryImage(with urlString: String, completion: @escaping (Data?) -> Void) {
+    func fetchRepositoryImage(with urlString: String, completion: @escaping (Result<Data, APIError>) -> Void) {
         apiManager.getRepositoryImageData(urlString, completion: completion)
     }
 }

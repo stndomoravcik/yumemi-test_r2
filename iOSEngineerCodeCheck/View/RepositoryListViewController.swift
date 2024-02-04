@@ -68,11 +68,34 @@ extension RepositoryListViewController: UISearchBarDelegate {
         guard let searchText = searchBar.text, !searchText.isEmpty else {
             return
         }
-        viewModel.fetchGitRepository(with: searchText) { [weak self] repos in
-            self?.repositories = repos
-            DispatchQueue.main.async { [weak self] in
-                self?.tableView.reloadData()
-            }
+        viewModel.fetchGitRepository(with: searchText) { [weak self] result in
+            self?.updateListFromResult(result)
         }
+    }
+}
+
+extension RepositoryListViewController {
+    
+    private func updateListFromResult(_ result: Result<[Repo], APIError>) {
+        switch result {
+        case .success(let repos):
+            repositories = repos
+            reloadList()
+        case .failure(let error):
+            presentAlert(with: error.errorMessage)
+        }
+    }
+    
+    private func reloadList() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+    
+    private func presentAlert(with message: String) {
+        let alertController = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(confirmAction)
+        present(alertController, animated: true)
     }
 }

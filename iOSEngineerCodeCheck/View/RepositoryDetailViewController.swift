@@ -49,16 +49,24 @@ class RepositoryDetailViewController: UIViewController {
     
     func getImage(_ avatarURL: String){
         
-        viewModel.fetchRepositoryImage(with: avatarURL) { imageData in
-            guard let imageData = imageData else {
-                return
-            }
-            if let image = UIImage(data: imageData) {
-                DispatchQueue.main.async { [weak self] in
-                    self?.repositoryImage.image = image
+        viewModel.fetchRepositoryImage(with: avatarURL) { [weak self] result in
+            switch result {
+            case .success(let data):
+                if let image = UIImage(data: data) {
+                    self?.reloadImage(image)
                 }
+            case .failure(_):
+                print("Image not available")
             }
         }
     }
+}
+
+extension RepositoryDetailViewController {
     
+    private func reloadImage(_ image: UIImage) {
+        DispatchQueue.main.async { [weak self] in
+            self?.repositoryImage.image = image
+        }
+    }
 }
