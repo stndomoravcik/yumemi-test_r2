@@ -15,7 +15,7 @@ class APIManager {
         
         downloadTask = URLSession.shared.dataTask(with: url) { (data, res, err) in
             if let error = err {
-                print("Error: data download failed")
+                print("Error: \(error.localizedDescription)")
                 completion(nil)
                 return
             }
