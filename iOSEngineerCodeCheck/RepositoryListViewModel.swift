@@ -1,5 +1,5 @@
 //
-//  ViewControllerModel.swift
+//  RepositoryListViewModel.swift
 //  iOSEngineerCodeCheck
 //
 //  Created by Moravcik Stanislav on 2024/02/04.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ViewControllerModel {
+class RepositoryListViewModel {
     
     private var apiManager = APIManager()
     

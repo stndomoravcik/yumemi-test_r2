@@ -12,7 +12,7 @@ class RepositoryListViewController: UITableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
-    private var viewModel = ViewControllerModel()
+    private var viewModel = RepositoryListViewModel()
     private var repositories: [Repo] = []
     private var repoIndex: Int?
     
