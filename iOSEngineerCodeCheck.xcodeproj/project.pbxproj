@@ -86,6 +86,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9CBB91CC2B6FABC700CED472 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFD945E2244DC5E80012785A /* RepositoryListViewController.swift */,
+				BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9CBB91CD2B6FABCD00CED472 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9CBB91CF2B6FAC3100CED472 /* Entity */,
+				9CBB91C82B6E953700CED472 /* RepositoryListViewModel.swift */,
+				9CBB91CA2B6E996B00CED472 /* RepositoryDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9CBB91CE2B6FAC0F00CED472 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9CBB91C62B6E7EB800CED472 /* APIManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9CBB91CF2B6FAC3100CED472 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9CBB91C42B6E5DFE00CED472 /* Repo.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
@@ -109,14 +144,11 @@
 		BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */ = {
 			isa = PBXGroup;
 			children = (
+				9CBB91CE2B6FAC0F00CED472 /* Services */,
+				9CBB91CC2B6FABC700CED472 /* View */,
+				9CBB91CD2B6FABCD00CED472 /* ViewModel */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
-				BFD945E2244DC5E80012785A /* RepositoryListViewController.swift */,
-				BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */,
-				9CBB91C42B6E5DFE00CED472 /* Repo.swift */,
-				9CBB91C82B6E953700CED472 /* RepositoryListViewModel.swift */,
-				9CBB91CA2B6E996B00CED472 /* RepositoryDetailViewModel.swift */,
-				9CBB91C62B6E7EB800CED472 /* APIManager.swift */,
 				BFD945E4244DC5E80012785A /* Main.storyboard */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
