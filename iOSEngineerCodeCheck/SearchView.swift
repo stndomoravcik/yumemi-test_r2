@@ -28,7 +28,7 @@ struct SearchView: View {
                     }
                 List {
                     ForEach(viewModel.repos, id: \.self) { item in
-                        Text(item.fullName)
+                        NavigationLink(item.fullName, destination: DetailView(viewModel: .init(repo: item)))
                     }
                 }
             }
