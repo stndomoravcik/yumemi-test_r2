@@ -37,7 +37,7 @@ class RepositoryDetailViewController: UIViewController {
         }
         languageLabel.text = "Written in \(repo.language)"
         stargazersLabel.text = "\(repo.stargazersCount) stars"
-        watchersLabel.text = "\(repo.wachersCount) watchers"
+        watchersLabel.text = "\(repo.watchersCount) watchers"
         forksCountLabel.text = "\(repo.forksCount) forks"
         issuesCountLabel.text = "\(repo.openIssuesCount) open issues"
         titleLabel.text = repo.fullName

@@ -40,8 +40,8 @@ struct Repo: Hashable {
         return items["stargazers_count"] as? Int ?? 0
     }
     
-    var wachersCount: Int {
-        return items["wachers_count"] as? Int ?? 0
+    var watchersCount: Int {
+        return items["watchers_count"] as? Int ?? 0
     }
     
     var forksCount: Int {
@@ -56,7 +56,7 @@ struct Repo: Hashable {
         hasher.combine(fullName)
         hasher.combine(language)
         hasher.combine(stargazersCount)
-        hasher.combine(wachersCount)
+        hasher.combine(watchersCount)
         hasher.combine(forksCount)
         hasher.combine(openIssuesCount)
     }
