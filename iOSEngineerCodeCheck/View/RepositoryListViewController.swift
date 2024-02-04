@@ -70,7 +70,7 @@ extension RepositoryListViewController: UISearchBarDelegate {
         }
         viewModel.fetchGitRepository(with: searchText) { [weak self] repos in
             self?.repositories = repos
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()
             }
         }
