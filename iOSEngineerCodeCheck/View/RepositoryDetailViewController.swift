@@ -54,8 +54,8 @@ class RepositoryDetailViewController: UIViewController {
                 return
             }
             if let image = UIImage(data: imageData) {
-                DispatchQueue.main.async {
-                    self.repositoryImage.image = image
+                DispatchQueue.main.async { [weak self] in
+                    self?.repositoryImage.image = image
                 }
             }
         }
