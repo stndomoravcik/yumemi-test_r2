@@ -21,7 +21,7 @@ struct SearchView: View {
                     .autocorrectionDisabled()
                     .padding()
                     .onChange(of: searchText) { _ in
-                        // TODO: 中断処理
+                        viewModel.cancelSearch()
                     }
                     .onSubmit {
                         viewModel.makeRepos(searchText)
