@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9C5F6CFB2B707D8D0066AC9E /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F6CFA2B707D8D0066AC9E /* DummyData.swift */; };
+		9C5F6CFD2B708CBD0066AC9E /* VSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F6CFC2B708CBD0066AC9E /* VSpacer.swift */; };
+		9C5F6CFF2B708CCC0066AC9E /* HSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F6CFE2B708CCC0066AC9E /* HSpacer.swift */; };
 		9CBB91B92B6D44BE00CED472 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB91B82B6D44BE00CED472 /* SearchView.swift */; };
 		9CBB91BB2B6D45FE00CED472 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB91BA2B6D45FE00CED472 /* SearchViewModel.swift */; };
 		9CBB91BD2B6D46F100CED472 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB91BC2B6D46F100CED472 /* Repo.swift */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		9C5F6CFA2B707D8D0066AC9E /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		9C5F6CFC2B708CBD0066AC9E /* VSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSpacer.swift; sourceTree = "<group>"; };
+		9C5F6CFE2B708CCC0066AC9E /* HSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSpacer.swift; sourceTree = "<group>"; };
 		9CBB91B82B6D44BE00CED472 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		9CBB91BA2B6D45FE00CED472 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		9CBB91BC2B6D46F100CED472 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				BFD945E2244DC5E80012785A /* ViewController.swift */,
 				BF0A658C244F2A3B00280FA6 /* ViewController2.swift */,
+				9C5F6CFC2B708CBD0066AC9E /* VSpacer.swift */,
+				9C5F6CFE2B708CCC0066AC9E /* HSpacer.swift */,
 				BFD945E4244DC5E80012785A /* Main.storyboard */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
@@ -291,8 +297,10 @@
 				9CBB91B92B6D44BE00CED472 /* SearchView.swift in Sources */,
 				BFD945E3244DC5E80012785A /* ViewController.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* ViewController2.swift in Sources */,
+				9C5F6CFD2B708CBD0066AC9E /* VSpacer.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				9C5F6CFB2B707D8D0066AC9E /* DummyData.swift in Sources */,
+				9C5F6CFF2B708CCC0066AC9E /* HSpacer.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

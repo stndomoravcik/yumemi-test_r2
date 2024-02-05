@@ -17,7 +17,7 @@ final class DetailViewModel: ObservableObject {
     
     init(repo: Repo) {
         self.repo = repo
-        self.param = .init(image: nil, language: "", stargazers: "", watchers: "", forks: "", issues: "")
+        self.param = .init(image: nil, fullName: "", language: "", stargazers: "", watchers: "", forks: "", issues: "")
         
         self.makeParam()
     }
@@ -30,6 +30,7 @@ final class DetailViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self?.param = .init(
                     image: uiImage,
+                    fullName: self?.repo.fullName ?? "",
                     language: self?.repo.language ?? "",
                     stargazers: String(self?.repo.stargazersCount ?? 0),
                     watchers: String(self?.repo.watchersCount ?? 0),

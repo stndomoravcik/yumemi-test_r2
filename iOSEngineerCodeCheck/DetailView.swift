@@ -10,6 +10,7 @@ import SwiftUI
 
 struct DetailViewParam {
     let image: UIImage?
+    let fullName: String
     let language: String
     let stargazers: String
     let watchers: String
@@ -25,13 +26,32 @@ struct DetailView: View {
         VStack {
             if let uiImage = viewModel.param.image {
                 Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 300, height: 300)
+                    .padding()
+            } else {
+                VSpacer(300)
             }
+            Text(viewModel.repo.fullName)
+                .font(.title)
+                .lineLimit(1)
+                .minimumScaleFactor(0.9)
             Text("Written in " + viewModel.param.language)
-            Text(viewModel.param.stargazers + " stars")
-            Text(viewModel.param.watchers + " watchers")
-            Text(viewModel.param.forks + " forks")
-            Text(viewModel.param.issues + " issues")
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .font(.headline)
+                .padding(.vertical, 5)
+            Group {
+                Text(viewModel.param.stargazers + " Stars")
+                Text(viewModel.param.watchers + " Watchers")
+                Text(viewModel.param.forks + " Forks")
+                Text(viewModel.param.issues + " Issues")
+            }
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .font(.subheadline)
+            .padding(.vertical, 2)
         }
+        .padding()
     }
 }
 
