@@ -10,6 +10,8 @@ import XCTest
 @testable import iOSEngineerCodeCheck
 
 class APIManagerTests: XCTestCase {
+    // TODO: ダミーデータを返す（URLSessionをMock?）ように修正し、再テスト
+    
     private let apiManager = APIManager.shared
     
     private func getRepo(_ name: String, completion: @escaping (Repo?) -> Void) {
