@@ -34,3 +34,7 @@ struct DetailView: View {
         }
     }
 }
+
+#Preview {
+    DetailView(viewModel: .init(repo: DummyData.dummyRepo))
+}
