@@ -96,6 +96,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C0644302B72533A00118D5E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9CBB91BE2B6D473B00CED472 /* APIManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9C0644312B72534600118D5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CBB91D42B6FDFE000CED472 /* DetailView.swift */,
+				9CBB91B82B6D44BE00CED472 /* SearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9C0644322B72535000118D5E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9CBB91D62B6FDFF400CED472 /* DetailViewModel.swift */,
+				9CBB91BA2B6D45FE00CED472 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9C0644332B72535900118D5E /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9CBB91BC2B6D46F100CED472 /* Repo.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		9C0644342B72536B00118D5E /* ViewParts */ = {
+			isa = PBXGroup;
+			children = (
+				9C5F6CFE2B708CCC0066AC9E /* HSpacer.swift */,
+				9C5F6CFC2B708CBD0066AC9E /* VSpacer.swift */,
+			);
+			path = ViewParts;
+			sourceTree = "<group>";
+		};
+		9C0644352B72537F00118D5E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9C5F6CFA2B707D8D0066AC9E /* DummyData.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
@@ -119,23 +170,20 @@
 		BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */ = {
 			isa = PBXGroup;
 			children = (
-				9CBB91B82B6D44BE00CED472 /* SearchView.swift */,
-				9CBB91BA2B6D45FE00CED472 /* SearchViewModel.swift */,
+				9C0644332B72535900118D5E /* Entity */,
+				9C0644302B72533A00118D5E /* Services */,
+				9C0644312B72534600118D5E /* View */,
+				9C0644322B72535000118D5E /* ViewModel */,
+				9C0644342B72536B00118D5E /* ViewParts */,
+				9C0644352B72537F00118D5E /* Util */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
-				9CBB91D42B6FDFE000CED472 /* DetailView.swift */,
-				9CBB91D62B6FDFF400CED472 /* DetailViewModel.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				BFD945E2244DC5E80012785A /* ViewController.swift */,
 				BF0A658C244F2A3B00280FA6 /* ViewController2.swift */,
-				9C5F6CFC2B708CBD0066AC9E /* VSpacer.swift */,
-				9C5F6CFE2B708CCC0066AC9E /* HSpacer.swift */,
 				BFD945E4244DC5E80012785A /* Main.storyboard */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
 				BFD945EC244DC5EB0012785A /* Info.plist */,
-				9CBB91BC2B6D46F100CED472 /* Repo.swift */,
-				9CBB91BE2B6D473B00CED472 /* APIManager.swift */,
-				9C5F6CFA2B707D8D0066AC9E /* DummyData.swift */,
 			);
 			path = iOSEngineerCodeCheck;
 			sourceTree = "<group>";
